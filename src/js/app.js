@@ -48,21 +48,16 @@ document.addEventListener('DOMContentLoaded', e => {
     ticketsUI.renderTickets(locations.lastSearch);
   }
 
-  const btns = document.querySelectorAll('.favorite-button')
-
-  btns.forEach(elem=>{
-
-    elem.addEventListener('click', (event) =>{
-      event.preventDefault()
+  document.addEventListener('click', (event) =>{
+      
       if(event.target.classList.contains('favorite-button')){
+        event.preventDefault()
         const idElem = event.target.parentElement.querySelector('.ticket-flight-number').id
         faivorites.findTickets(idElem);
         faivorites.generateList()
       }
     })
-  })
-
-});
+  });
 
 
 
